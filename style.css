@@ -4,7 +4,7 @@ body {
 
 #top-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     padding-top: 10px;
     padding-left: 100px;
     padding-right: 100px;
@@ -30,19 +30,19 @@ body {
     padding-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 50px;
 }
 
 .pic-container {
     display: grid;
-    grid-template-rows: 345px 25px;
+    grid-template-rows: 370px 25px;
     justify-content: center;
     flex-direction: column;
     max-height: 500px;
 }
 
 #pic {
-    max-height: 345px;
+    max-height: 370px;
     /* max-width: 100%; */
     object-fit: contain;
     object-position: top;
@@ -50,7 +50,7 @@ body {
 }
 
 #pic-text {
-    margin: 0px;
+    margin-top: 10px;
     text-align: center;
     font-weight: 400;
     font-size: 20px;
@@ -77,8 +77,9 @@ body {
     #top-footer {
         /* padding-left: 25px;
         padding-right: 25px; */
-        justify-content: space-between;
-        width: 200px;
+        display: flex;
+        justify-content: center;
+        /* width: 200px; */
     }
 
     #pic{
@@ -86,20 +87,22 @@ body {
     }
 
     #pic-grid {
-        padding-top: 50px;
         display: block;
     }
 
     .pic-container{
-        padding-bottom: 20px;
-        grid-template-rows: 250px 25px;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+        grid-template-rows: 250px 50px;
     }
 }
 
 @media(max-width:1024px){
     #top-footer {
-        padding-left: 100px;
-        padding-right: 100px;
+        /* padding-left: 100px; */
+        /* padding-right: 100px; */
+        display: flex;
+        justify-content: center;
     }
 
     #pic-grid {
