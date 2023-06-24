@@ -12,10 +12,11 @@ body {
 }
 
 #top-footer > div {
+    margin-top: 10px;
     color: #070707;
     min-height: 40px;
-    font-size: 30px;
-    font-weight: 200;
+    font-size: 50px;
+    font-weight: 300;
     text-align: center;
 }
 
@@ -34,16 +35,27 @@ body {
     gap: 50px;
 }
 
-.pic-container {
+#pic-grid > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-height: 500px;
+}
+
+.pic-container:nth-child(n + 7) {
+    opacity: 0;
     display: grid;
     justify-content: center;
     flex-direction: column;
     max-height: 500px;
-    opacity: 0;
 }
 
 /* for pic-container animation */
-.pic-container-animation {
+.pic-container-animation:nth-child(n + 7) {
+    display: grid;
+    justify-content: center;
+    flex-direction: column;
+    max-height: 500px;
     animation: popup_pic_container 1s forwards;
 }
 
@@ -90,6 +102,23 @@ body {
         grid-template-rows: 320px 50px;
         /* align-items: center; */
     }
+
+    .pic-container:nth-child(n + 3) {
+        opacity: 0;
+        display: grid;
+        justify-content: center;
+        flex-direction: column;
+        max-height: 500px;
+    }
+    
+    /* for pic-container animation */
+    .pic-container-animation:nth-child(n + 3) {
+        display: grid;
+        justify-content: center;
+        flex-direction: column;
+        max-height: 500px;
+        animation: popup_pic_container 1s forwards;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -107,6 +136,24 @@ body {
         padding-bottom: 20px;
         place-items: center;
     }
+
+    .pic-container:nth-child(n + 5) {
+        opacity: 0;
+        display: grid;
+        justify-content: center;
+        flex-direction: column;
+        max-height: 500px;
+    }
+    
+    /* for pic-container animation */
+    .pic-container-animation:nth-child(n + 5) {
+        display: grid;
+        justify-content: center;
+        flex-direction: column;
+        max-height: 500px;
+        animation: popup_pic_container 1s forwards;
+    }
+
 }
 
 /* for expanded the img when press */
