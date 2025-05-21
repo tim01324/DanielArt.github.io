@@ -214,6 +214,14 @@ body {
 	background: rgba(181, 91, 76, 0.3);
 }
 
+.price-tag {
+	color: #4caf50;
+	font-weight: 600;
+	margin-left: 8px;
+	font-style: italic;
+	font-size: 0.9em;
+}
+
 .bottom-footer {
 	display: flex;
 	justify-content: center;

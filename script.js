@@ -1,37 +1,120 @@
 // Use DOMContentLoaded to ensure DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
-  // Get all images and container elements
-  const images = document.querySelectorAll(".artwork-img");
+  const picGrid = document.getElementById("pic-grid");
   const expandedImage = document.getElementById("expandedImage");
   const modal = document.getElementById("imageModal");
-  const imageContainers = document.querySelectorAll(".pic-container");
   const imageCaption = document.querySelector(".image-caption");
 
-  // Add event listener to each image for click event - use event delegation for better performance
-  document.getElementById("pic-grid").addEventListener("click", function (event) {
-    const target = event.target;
-    if (target.classList.contains("artwork-img")) {
-      expandImage(event);
+  // Function to create and append artwork elements
+  function displayArtwork(artwork) {
+    const picContainer = document.createElement("div");
+    picContainer.classList.add("pic-container");
+
+    const artworkImgContainer = document.createElement("div");
+    artworkImgContainer.classList.add("artwork-img-container");
+
+    const img = document.createElement("img");
+    img.src = `pics/${artwork.filename}`;
+    img.alt = `${artwork.title} artwork`;
+    img.classList.add("artwork-img");
+    img.loading = "lazy"; // Native lazy loading
+
+    artworkImgContainer.appendChild(img);
+
+    const picText = document.createElement("p");
+    picText.classList.add("pic-text");
+    picText.textContent = artwork.title;
+
+    if (artwork.sold) {
+      const soldTag = document.createElement("span");
+      soldTag.classList.add("sold-tag");
+      soldTag.textContent = "Sold";
+      picText.appendChild(soldTag);
+    } else if (artwork.price) { // Display price if not sold and price exists
+      const priceTag = document.createElement("span");
+      priceTag.classList.add("price-tag"); // You'll need to style this class in style.css
+      priceTag.textContent = `$${artwork.price}`;
+      picText.appendChild(priceTag);
     }
-  });
+
+    picContainer.appendChild(artworkImgContainer);
+    picContainer.appendChild(picText);
+    picGrid.appendChild(picContainer);
+    // TEMPORARY DIAGNOSTIC: Make containers visible immediately
+    picContainer.style.opacity = "1";
+  }
+
+  // Fetch artwork data and populate the grid
+  async function loadGallery() {
+    try {
+      const response = await fetch("./gallery-data.json");
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const artworks = await response.json();
+      artworks.forEach(displayArtwork);
+
+      // Re-initialize observers and event listeners after dynamic content is loaded
+      initializeInteractions();
+
+    } catch (error) {
+      console.error("Could not load gallery data:", error);
+      picGrid.innerHTML = "<p>Error loading gallery. Please try again later.</p>";
+    }
+  }
+
+  function initializeInteractions() {
+    // Get all dynamically loaded images and containers
+    const images = document.querySelectorAll(".artwork-img");
+    const imageContainers = document.querySelectorAll(".pic-container");
+
+    // Event listener for image clicks (delegated to pic-grid)
+    picGrid.addEventListener("click", function (event) {
+      const target = event.target;
+      if (target.classList.contains("artwork-img")) {
+        expandImage(event);
+      }
+    });
+
+    // Intersection Observer for lazy loading and animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          const container = entry.target;
+          setTimeout(() => {
+            container.classList.add("pic-container-animation");
+            container.style.opacity = "1";
+          }, Array.from(imageContainers).indexOf(container) % 6 * 150);
+          imageObserver.unobserve(container);
+        }
+      });
+    }, observerOptions);
+
+    imageContainers.forEach(container => {
+      imageObserver.observe(container);
+    });
+  }
+
 
   // Function to expand image
   function expandImage(event) {
     const thumbnail = event.target;
     expandedImage.src = thumbnail.src;
 
-    // Get the image title from the parent container's pic-text
     const container = thumbnail.closest('.pic-container');
-    const imageTitle = container.querySelector('.pic-text').textContent;
+    // Extract title text only, excluding sold/price tags
+    const titleNode = container.querySelector('.pic-text').firstChild;
+    const imageTitle = titleNode ? titleNode.textContent.trim() : "Artwork";
     imageCaption.textContent = imageTitle;
 
-    thumbnail.classList.add("expanded");
     modal.style.display = "block";
-
-    // Add animation class to body to prevent scrolling
     document.body.style.overflow = "hidden";
-
-    // Animate the modal opening
     requestAnimationFrame(() => {
       modal.style.opacity = 1;
     });
@@ -39,23 +122,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to close modal
   window.closeModal = function () {
-    // Fade out animation
     modal.style.opacity = 0;
-
     setTimeout(() => {
       modal.style.display = "none";
       document.body.style.overflow = "auto";
-
-      // Remove expanded class from all images
-      images.forEach(image => {
-        image.classList.remove("expanded");
-      });
     }, 300);
   }
 
   // When the user clicks the expanded image, close it
   expandedImage.onclick = function (event) {
-    // Prevent the event from bubbling up to the modal
     event.stopPropagation();
   };
 
@@ -73,31 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Use Intersection Observer for lazy loading and animations
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
-
-  const imageObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const container = entry.target;
-        // Add animation class with slight delay for staggered effect
-        setTimeout(() => {
-          container.classList.add("pic-container-animation");
-          container.style.opacity = "1";
-        }, Array.from(imageContainers).indexOf(container) % 6 * 150);
-
-        // Stop observing after animation is applied
-        imageObserver.unobserve(container);
-      }
-    });
-  }, observerOptions);
-
-  // Observe all containers
-  imageContainers.forEach(container => {
-    imageObserver.observe(container);
-  });
+  // Load the gallery
+  loadGallery();
 });
