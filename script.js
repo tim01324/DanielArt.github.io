@@ -40,8 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     picContainer.appendChild(artworkImgContainer);
     picContainer.appendChild(picText);
     picGrid.appendChild(picContainer);
-    // TEMPORARY DIAGNOSTIC: Make containers visible immediately
-    picContainer.style.opacity = "1";
   }
 
   // Fetch artwork data and populate the grid
