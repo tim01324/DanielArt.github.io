@@ -45,9 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Fetch artwork data and populate the grid
   async function loadGallery() {
     try {
-      const response = await fetch("./gallery-data.json");
+      const response = await fetch("/DanielArt.github.io/gallery-data.json");
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`HTTP error! status: ${response.status} - ${response.statusText} for ${response.url}`);
       }
       const artworks = await response.json();
       artworks.forEach(displayArtwork);
