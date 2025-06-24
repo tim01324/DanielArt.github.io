@@ -1,5 +1,11 @@
 [
 	{
+		"filename": "Hokey Night in Canada.jpg",
+		"title": "Hokey Night in Canada",
+		"sold": false,
+		"price": null
+	},
+	{
 		"filename": "Star Burst.jpg",
 		"title": "Star Burst",
 		"sold": false,
@@ -141,12 +147,6 @@
 		"filename": "Shimmering Trees.jpg",
 		"title": "Shimmering Trees",
 		"sold": true,
-		"price": null
-	},
-	{
-		"filename": "Hokey Night in Canada.jpg",
-		"title": "Hokey Night in Canada",
-		"sold": false,
 		"price": null
 	},
 	{
