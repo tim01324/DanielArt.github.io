@@ -1,164 +1,176 @@
 [
-  {
-    "filename": "Star Burst.jpg",
-    "title": "Star Burst",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Midnight From My Bedroom Window.jpg",
-    "title": "Midnight From My Bedroom Window",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Waiting For The Northern Lights.jpg",
-    "title": "Waiting For The Northern Lights",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Sad Memories.jpg",
-    "title": "Sad Memories",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Solar Flair.jpg",
-    "title": "Solar Flair",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "North in the Autumn.jpg",
-    "title": "North in the Autumn",
-    "sold": true,
-    "price": null
-  },
-  {
-    "filename": "Midnight Dance on Water.jpg",
-    "title": "Midnight Dance on Water",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Lovebirds on a Wire.jpg",
-    "title": "Lovebirds on a Wire",
-    "sold": true,
-    "price": null
-  },
-  {
-    "filename": "Black Feather.jpg",
-    "title": "Black Feather",
-    "sold": true,
-    "price": null
-  },
-  {
-    "filename": "White Feather.jpg",
-    "title": "White Feather",
-    "sold": true,
-    "price": null
-  },
-  {
-    "filename": "African Queen.jpg",
-    "title": "African Queen",
-    "sold": true,
-    "price": null
-  },
-  {
-    "filename": "Infinity.jpg",
-    "title": "Infinity",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Warrior.jpg",
-    "title": "Warrior",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Ghost.jpg",
-    "title": "Ghost",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Tattoo.jpg",
-    "title": "Tattoo",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Make a Wish.jpg",
-    "title": "Make a Wish",
-    "sold": true,
-    "price": null
-  },
-  {
-    "filename": "Warriors Headdress.jpg",
-    "title": "Warriors Headdress",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Reflection at Night.jpg",
-    "title": "Reflection at Night",
-    "sold": true,
-    "price": null
-  },
-  {
-    "filename": "Native Bride.jpg",
-    "title": "Native Bride",
-    "sold": true,
-    "price": null
-  },
-  {
-    "filename": "Loon in the Morning.jpg",
-    "title": "Loon in the Morning",
-    "sold": true,
-    "price": null
-  },
-  {
-    "filename": "Flight of the Cranes.jpg",
-    "title": "Flight of the Cranes",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Space Party.jpg",
-    "title": "Space Party",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Golden Leaves.jpg",
-    "title": "Golden Leaves",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Shimmering Trees.jpg",
-    "title": "Shimmering Trees",
-    "sold": true,
-    "price": null
-  },
-  {
-    "filename": "Hokey Night in Canada.jpg",
-    "title": "Hokey Night in Canada",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Life's a Drag.jpg",
-    "title": "Life's a Drag",
-    "sold": false,
-    "price": null
-  },
-  {
-    "filename": "Stress Relief.jpg",
-    "title": "Stress Relief",
-    "sold": false,
-    "price": null
-  }
-] 
+	{
+		"filename": "Star Burst.jpg",
+		"title": "Star Burst",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Midnight From My Bedroom Window.jpg",
+		"title": "Midnight From My Bedroom Window",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Waiting For The Northern Lights.jpg",
+		"title": "Waiting For The Northern Lights",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Sad Memories.jpg",
+		"title": "Sad Memories",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Solar Flair.jpg",
+		"title": "Solar Flair",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "North in the Autumn.jpg",
+		"title": "North in the Autumn",
+		"sold": true,
+		"price": null
+	},
+	{
+		"filename": "Midnight Dance on Water.jpg",
+		"title": "Midnight Dance on Water",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Lovebirds on a Wire.jpg",
+		"title": "Lovebirds on a Wire",
+		"sold": true,
+		"price": null
+	},
+	{
+		"filename": "Black Feather.jpg",
+		"title": "Black Feather",
+		"sold": true,
+		"price": null
+	},
+	{
+		"filename": "White Feather.jpg",
+		"title": "White Feather",
+		"sold": true,
+		"price": null
+	},
+	{
+		"filename": "African Queen.jpg",
+		"title": "African Queen",
+		"sold": true,
+		"price": null
+	},
+	{
+		"filename": "Infinity.jpg",
+		"title": "Infinity",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Warrior.jpg",
+		"title": "Warrior",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Ghost.jpg",
+		"title": "Ghost",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Tattoo.jpg",
+		"title": "Tattoo",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Make a Wish.jpg",
+		"title": "Make a Wish",
+		"sold": true,
+		"price": null
+	},
+	{
+		"filename": "Warriors Headdress.jpg",
+		"title": "Warriors Headdress",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Reflection at Night.jpg",
+		"title": "Reflection at Night",
+		"sold": true,
+		"price": null
+	},
+	{
+		"filename": "Native Bride.jpg",
+		"title": "Native Bride",
+		"sold": true,
+		"price": null
+	},
+	{
+		"filename": "Loon in the Morning.jpg",
+		"title": "Loon in the Morning",
+		"sold": true,
+		"price": null
+	},
+	{
+		"filename": "Flight of the Cranes.jpg",
+		"title": "Flight of the Cranes",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Space Party.jpg",
+		"title": "Space Party",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Golden Leaves.jpg",
+		"title": "Golden Leaves",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Shimmering Trees.jpg",
+		"title": "Shimmering Trees",
+		"sold": true,
+		"price": null
+	},
+	{
+		"filename": "Hokey Night in Canada.jpg",
+		"title": "Hokey Night in Canada",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Life's a Drag.jpg",
+		"title": "Life's a Drag",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Stress Relief.jpg",
+		"title": "Stress Relief",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Buffalo Bull.JPEG",
+		"title": "Buffalo Bull",
+		"sold": false,
+		"price": null
+	},
+	{
+		"filename": "Busy Body.JPEG",
+		"title": "Busy Body",
+		"sold": false,
+		"price": null
+	}
+]
